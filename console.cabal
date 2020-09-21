@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 2db436c495b2f10d4eed0c74ad9db4c90d8442fd7746b5cd28dfa1c66b1897af
+-- hash: c7a67537592a02833b6befd405bdb550eb671201f69fe33d2e50290e107396f6
 
 name:           console
 version:        0.1.0.0
@@ -28,12 +28,16 @@ source-repository head
 library
   exposed-modules:
       Lib
+      Ls
   other-modules:
       Paths_console
   hs-source-dirs:
       src
   build-depends:
       base >=4.7 && <5
+    , directory ==1.3.6.0
+    , microlens
+    , microlens-platform
   default-language: Haskell2010
 
 executable console-exe

@@ -24,6 +24,11 @@ dependencies:
 
 library:
   source-dirs: src
+  dependencies:
+    - directory == 1.3.6.0
+    - microlens-platform
+    - microlens
+
 
 executables:
   console-exe:
