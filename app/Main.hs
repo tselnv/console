@@ -2,12 +2,14 @@
 
 module Main where
 
-import Lib
+import Common
 import Ls
 import Control.Monad (when)
 import System.Directory (getCurrentDirectory)
 import System.IO (hFlush, stdout)
 import Lens.Micro.Platform
+
+
 
 
 parseCommand :: [String] -> Command
@@ -24,11 +26,12 @@ commandLoop status = do
   putStr ">> "
   hFlush stdout -- this command needs because of ghci disables buffering
   input <- getLine
-  let command = parseCommand $ words input
+  -- print $ simplifyArgs input    
+  let command = parseCommand $ simplifyArgs input
   newStatus <- command $ inputStat status
   newStatus^.action
   let out = newStatus^.output in
-    when (not $ null out)  (mapM_ putStrLn out)
+    when (out /= [""])  (mapM_ putStrLn out)
   if newStatus^.continueFlag
     then commandLoop newStatus
     else return ()

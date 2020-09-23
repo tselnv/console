@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: c7a67537592a02833b6befd405bdb550eb671201f69fe33d2e50290e107396f6
+-- hash: 8565e7917caab27a1e00a2458c4abd12811776db6377bde9447a75773d72906c
 
 name:           console
 version:        0.1.0.0
@@ -27,6 +27,7 @@ source-repository head
 
 library
   exposed-modules:
+      Common
       Lib
       Ls
   other-modules:
