@@ -48,7 +48,7 @@ unknownCommand s = \inp -> (output .~ ["unknown command: " ++ s]) <$> retNewStat
 
 
 pass :: Command
-pass = \int -> retNewStat int
+pass = \inp -> retNewStat inp
 
 
 exit :: Args -> Command

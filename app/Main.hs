@@ -4,6 +4,7 @@ module Main where
 
 import Common
 import Ls
+import Tar
 import Control.Monad (when)
 import System.Directory (getCurrentDirectory)
 import System.IO (hFlush, stdout)
@@ -17,6 +18,7 @@ parseCommand ("exit":rest) = exit rest
 parseCommand ("e":rest) = exit rest
 parseCommand ("pwd":rest)  = pwd rest
 parseCommand ("ls":rest)  = ls rest
+parseCommand ("tar":rest)  = tar rest
 parseCommand (x:rest) = unknownCommand x
 parseCommand [] = pass
 
